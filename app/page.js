@@ -16,7 +16,7 @@ function Home() {
 
   useEffect(() => {
     const loadQuizData = async () => {
-      const data = await fetchQuizData();
+      const data = await fetchQuizData(); //making API Call
       setQuizData(data);
       setLoading(false);
     };
