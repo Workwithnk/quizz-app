@@ -32,7 +32,7 @@ function Home() {
   };
 
   const handleRestartQuiz = () => {
-    setStep(0);
+    setStep(1);
     setScore(0);
     setAnswers([]);
   };
