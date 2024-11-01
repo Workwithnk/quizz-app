@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Question from './Question';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+
 
 const QuizScreen = ({ quizData, step, setStep, answers, setAnswers, onSubmitQuiz }) => {
   const handleAnswerChange = (questionId, isMultiSelect, selectedAnswer) => {
@@ -39,6 +42,9 @@ const QuizScreen = ({ quizData, step, setStep, answers, setAnswers, onSubmitQuiz
       <button className=' w-[88%] font-serif py-[10px] rounded-full text-white bg-red-500' onClick={handleNext}>
         {step === quizData.length ? 'Submit Quiz' : 'Next'}
       </button>
+      <div className=' w-[85px] absolute top-[-46px]'>
+        <CircularProgressbar styles={buildStyles({ pathColor: '#32e432', trailColor: '#f3f4f6' })} value={step} maxValue={quizData.length} />
+      </div>
     </div>
   );
 };
